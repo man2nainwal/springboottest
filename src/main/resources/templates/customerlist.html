@@ -16,29 +16,29 @@
 </head>
 <body>
 <div class="container">
-    <div th:if="${not #lists.isEmpty(products)}">
-        <h2>Product List</h2>
+    <div th:if="${not #lists.isEmpty(customers)}">
+        <h2>Customer List</h2>
         <table class="table table-striped">
             <tr>
                 <th>Id</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Image URL</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>email</th>
                 <th>List</th>
                 <th>Edit</th>
             </tr>
-            <tr th:each="product : ${products}">
-                <td th:text="${product.id}"></td>
-                <td th:text="${product.description}"></td>
-                <td th:text="${product.price}"></td>
-                <td th:text="${product.imageUrl}"></td>
-                <td><a th:href="${'/product/' + product.id}">View</a></td>
-                <td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.email}"></td>
+                <td><a th:href="${'/customer/' + customer.id}">Detail</a></td>
+                <td><a th:href="${'/customer/edit/' + customer.id}">Edit</a></td>
             </tr>
         </table>
     </div>
     <div class="class-form">
-        <a href="/product/new">New Product</a>
+        <a href="/customer/new">New Customer</a>
     </div>
 </div>
 
